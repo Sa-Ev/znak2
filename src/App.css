@@ -4,16 +4,44 @@
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+  pointer-events: visiblePainted;
+  animation: pulse 2s infinite ease-in-out;
+  animation: 3s linear infinite rotate;
 }
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  to {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0.5);
   }
 }
 
-.App-header {
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .lenin {
+    animation: lenin-spin infinite 20s linear;
+  }
+}
+
+.header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -23,9 +51,16 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.lenin {
+  color: red;
+  font-weight: 600;
+}
 .App-link {
-  color: #61dafb;
+  color: #f80b0b;
+  text-decoration: none;
+}
+.rct {
+  color: white;
 }
 
 @keyframes App-logo-spin {
